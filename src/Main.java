@@ -16,7 +16,7 @@ public class Main {
         }
 
         //task3
-        String[] words = {"Programmer", "Programming", "Programms"};
+        String[] words = {"Programmer", "Programming", "Programs"};
         System.out.println(longestPrefix(words));
 
         //task4
@@ -31,20 +31,17 @@ public class Main {
         System.out.println(message);
 
         //task6
-        StructureDeleting<Integer> structure = new StructureDeleting<>();
+        StructureDeleting<Integer> structureDeleting = new StructureDeleting<>();
 
-        structure.add(1);
-        structure.add(2);
-        structure.add(3);
-        structure.add(4);
+        structureDeleting.add(1);
+        structureDeleting.add(2);
+        structureDeleting.add(3);
 
-        System.out.println("Initial elements:");
-        structure.printElements();
+        System.out.println("Set before removal: " + structureDeleting.getAll());
 
-        structure.delete(2);
+        structureDeleting.remove(2);
 
-        System.out.println("Elements after deleting :");
-        structure.printElements();
+        System.out.println("Set after removal: " + structureDeleting.getAll());
     }
 
     //task1
@@ -98,11 +95,9 @@ public class Main {
             if (i >= 0) {
                 sum += first.charAt(i--) - '0';
             }
-
             if (j >= 0) {
                 sum += second.charAt(j--) - '0';
             }
-
             result.insert(0, sum % 2);
             carry = sum / 2;
         }
